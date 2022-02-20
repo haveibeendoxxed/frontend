@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Text, ResponsiveContext, RoutedAnchor, Button } from "grommet";
-import { Cloud } from "grommet-icons";
+import { View } from "grommet-icons";
 
 const Nav = (props) => {
   const size = React.useContext(ResponsiveContext);
@@ -24,24 +24,17 @@ const Nav = (props) => {
     >
       <RoutedAnchor
         path="/"
-        icon={<Cloud size="large" />}
+        icon={<View size="medium" />}
+        color="#fac000"
         label={size !== "small" && <Text size="xlarge">Doxxed</Text>}
       />
       <Box direction="row" gap="small">
-        <Button plain href="https://" target="_blank" rel="noreferrer">
-          {({ hover }) => (
-            <Box
-              pad={{ vertical: "small", horizontal: "medium" }}
-              round="xlarge"
-              background={hover ? "active" : "control"}
-              direction="row"
-              gap="small"
-            >
-              {/* <View /> */}
-              <Text icon>Connect Wallet</Text>
-            </Box>
-          )}
-        </Button>
+        <Button
+          primary
+          label="Connect Wallet"
+          size="large"
+          color="#fac000"
+        ></Button>
       </Box>
     </Box>
   );
